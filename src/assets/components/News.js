@@ -117,7 +117,7 @@ const News = () => {
                     {value === 0 && <SelfCountry countryCode={countryCode} />}
                     {value === 1 && <World type="general" />}
                     {value === 2 && <World type="technology" />}
-                    {value === 3 && <World type="bussiness" />}
+                    {value === 3 && <World type="business" />}
                     {value === 4 && <World type="entertainment" />}
                     {value === 5 && <World type="health" />}
                     {value === 6 && <World type="science" />}

@@ -6,6 +6,9 @@ import PlayCircleOutlineRoundedIcon from "@material-ui/icons/PlayCircleOutlineRo
 import { withRouter } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
+    root: {
+        minHeight: "100vh",
+    },
     font: {
         display: "flex",
         flexDirection: "row",
@@ -37,7 +40,7 @@ const Welcome = ({ history }) => {
     };
 
     return (
-        <div>
+        <div className={classes.root}>
             <h1 className={classes.font}>
                 Samachar
                 <NearMeRoundedIcon style={{ fontSize: "100px" }} />

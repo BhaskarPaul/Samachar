@@ -12,12 +12,10 @@ const SelfCountry = ({ countryCode }) => {
     const getAllNews = () => {
         axios
             .get(
-                `https://newsapi.org/v2/top-headlines?country=${newCountryCode}&apiKey=${API}`
+                `http://api.mediastack.com/v1/news?access_key=${API}&countries=${newCountryCode}&languages=en`
             )
             // .then((response) => console.log(response.data.articles))
-            .then((response) =>
-                setAllNews([...allNews, ...response.data.articles])
-            )
+            .then((response) => setAllNews([...allNews, ...response.data.data]))
             .catch((err) => console.log(err));
     };
 
@@ -30,16 +28,19 @@ const SelfCountry = ({ countryCode }) => {
             {allNews.length === 0 ? (
                 <Loader />
             ) : (
-                allNews.map((item, idx) => (
-                    <NewsCard
-                        key={idx}
-                        title={item.title}
-                        description={item.description}
-                        image={item.urlToImage}
-                        content={item.content}
-                        url={item.url}
-                    />
-                ))
+                allNews.map(
+                    (item, idx) =>
+                        item.title !== "No title" && (
+                            <NewsCard
+                                key={idx}
+                                title={item.title}
+                                description={item.description}
+                                image={item.image}
+                                content={item.description}
+                                url={item.url}
+                            />
+                        )
+                )
             )}
         </div>
     );

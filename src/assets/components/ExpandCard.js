@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -9,6 +9,18 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router-dom";
 
+const theme = createMuiTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            xl: 1920,
+        },
+    },
+});
+
 const useStyles = makeStyles({
     root: {
         position: "absolute",
@@ -16,6 +28,9 @@ const useStyles = makeStyles({
         left: "50%",
         transform: "translate(-50%, -50%)",
         minWidth: 500,
+        [theme.breakpoints.down("md")]: {
+            maxWidth: "80vw",
+        },
     },
 });
 
