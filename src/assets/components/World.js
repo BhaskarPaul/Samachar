@@ -11,10 +11,12 @@ const World = ({ type }) => {
     const getAllNews = () => {
         axios
             .get(
-                `http://api.mediastack.com/v1/news?access_key=${API}&categories=${type}&languages=en`
+                `https://newsapi.org/v2/top-headlines?category=${type}&apiKey=${API}`
             )
             // .then((response) => console.log(response.data.articles))
-            .then((response) => setAllNews([...allNews, ...response.data.data]))
+            .then((response) =>
+                setAllNews([...allNews, ...response.data.articles])
+            )
             .catch((err) => console.log(err));
     };
 
@@ -34,8 +36,8 @@ const World = ({ type }) => {
                                 key={idx}
                                 title={item.title}
                                 description={item.description}
-                                image={item.image}
-                                content={item.description}
+                                image={item.urlToImage}
+                                content={item.content}
                                 url={item.url}
                             />
                         )
