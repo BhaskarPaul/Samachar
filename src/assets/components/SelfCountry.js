@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewsCard from "./Card";
 import Loader from "./Loader";
+import FloatingToTop from "./FloatingToTop";
 import { API } from "../../API";
 import { withRouter } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const SelfCountry = ({ countryCode }) => {
 
     return (
         <div>
+            <FloatingToTop />
             {allNews.length === 0 ? (
                 <Loader />
             ) : (

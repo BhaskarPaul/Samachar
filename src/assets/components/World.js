@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import FloatingToTop from "./FloatingToTop";
 import { API } from "../../API";
 import NewsCard from "./Card";
 import { withRouter } from "react-router-dom";
@@ -11,7 +12,7 @@ const World = ({ type }) => {
     const getAllNews = () => {
         axios
             .get(
-                `https://newsapi.org/v2/top-headlines?category=${type}&apiKey=${API}`
+                `https://newsapi.org/v2/top-headlines?category=${type}&language=en&apiKey=${API}`
             )
             // .then((response) => console.log(response.data.articles))
             .then((response) =>
@@ -26,6 +27,8 @@ const World = ({ type }) => {
 
     return (
         <div>
+            <FloatingToTop />
+
             {allNews.length === 0 ? (
                 <Loader />
             ) : (

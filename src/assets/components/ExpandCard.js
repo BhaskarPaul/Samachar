@@ -38,9 +38,11 @@ const ExpandCard = ({ title, image, content, url }) => {
     const classes = useStyles();
 
     let newContent = "";
-    for (let i = 0; i < content.length; i++) {
-        if (content[i] === "[") break;
-        else newContent += content[i];
+    if (content) {
+        for (let i = 0; i < content.length; i++) {
+            if (content[i] === "[") break;
+            else newContent += content[i];
+        }
     }
 
     return (
