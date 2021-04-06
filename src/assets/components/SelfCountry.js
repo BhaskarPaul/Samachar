@@ -3,7 +3,6 @@ import axios from "axios";
 import NewsCard from "./Card";
 import Loader from "./Loader";
 import FloatingToTop from "./FloatingToTop";
-import { API } from "../../API";
 import { withRouter } from "react-router-dom";
 
 const SelfCountry = ({ countryCode }) => {
@@ -13,7 +12,7 @@ const SelfCountry = ({ countryCode }) => {
     const getAllNews = () => {
         axios
             .get(
-                `https://newsapi.org/v2/top-headlines?country=${newCountryCode}&apiKey=${API}`
+                `https://newsapi.org/v2/top-headlines?country=${newCountryCode}&apiKey=${process.env.REACT_APP_API}`
             )
             // .then((response) => console.log(response.data.articles))
             .then((response) =>
@@ -24,7 +23,7 @@ const SelfCountry = ({ countryCode }) => {
 
     useEffect(() => {
         getAllNews();
-    }, []);
+    }, [allNews, setAllNews]);
 
     return (
         <div>

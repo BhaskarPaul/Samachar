@@ -8,6 +8,9 @@ import { withRouter } from "react-router-dom";
 const useStyle = makeStyles((theme) => ({
     root: {
         minHeight: "100vh",
+        overflowX: "hidden",
+        overflowY: "hidden",
+        backgroundColor: "#00000",
     },
     font: {
         display: "flex",
