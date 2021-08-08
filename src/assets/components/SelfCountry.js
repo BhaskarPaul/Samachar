@@ -23,7 +23,7 @@ const SelfCountry = ({ countryCode }) => {
 
     useEffect(() => {
         getAllNews();
-    }, [allNews, setAllNews]);
+    }, []);
 
     return (
         <div>

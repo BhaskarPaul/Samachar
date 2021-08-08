@@ -8,30 +8,26 @@ import News from "./assets/components/News";
 import Grid from "@material-ui/core/Grid";
 
 function App() {
-    return (
-        <div className="App" style={{ overflowY: "hidden" }}>
-            <Grid container spacing={3}>
-                <Grid item xs={12}>
-                    <Router>
-                        <React.Fragment>
-                            <CssBaseline />
-                            <Container maxWidth="md">
-                                <Switch>
-                                    <Route path="/" component={Welcome} exact />
-                                    <Route
-                                        path="/news"
-                                        component={News}
-                                        exact
-                                    />
-                                </Switch>
-                                {/* <Welcome /> */}
-                            </Container>
-                        </React.Fragment>
-                    </Router>
-                </Grid>
-            </Grid>
-        </div>
-    );
+  return (
+    <div className="App" style={{ overflowY: "hidden" }}>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Router>
+            <React.Fragment>
+              <CssBaseline />
+              <Container maxWidth="md">
+                <Switch>
+                  {/* <Route path="/" component={} exact /> */}
+                  <Route path="/" component={News} />
+                </Switch>
+                {/* <Welcome /> */}
+              </Container>
+            </React.Fragment>
+          </Router>
+        </Grid>
+      </Grid>
+    </div>
+  );
 }
 
 export default App;

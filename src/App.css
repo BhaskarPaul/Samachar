@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 
 * {
-    font-family: "Itim", cursive;
-    border-radius: 0;
-    /* overflow-y: hidden; */
+  font-family: "Itim", cursive;
+  border-radius: 0;
+  /* overflow-y: hidden; */
 }
 
 /* .App {
@@ -16,9 +16,10 @@
     background-size: cover;
 } */
 
-.App {
-    z-index: 10;
-    background: url("./images/undraw_newspaper_k72w.png");
-    background-attachment: fixed;
-    background-size: auto;
-}
+/* .App {
+  z-index: 10;
+  background: url("./images/undraw_newspaper_k72w.jpg");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: cover;
+} */
