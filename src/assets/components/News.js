@@ -21,6 +21,9 @@ const useStyle = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
   },
+  tabs: {
+    backgroundColor: "white",
+  },
 }));
 
 const News = () => {
@@ -39,9 +42,9 @@ const News = () => {
     return () => clearTimeout(handleTime);
   }, []);
 
-  useEffect(() => {
-    console.log(value);
-  }, [value, setValue]);
+  // useEffect(() => {
+  //   console.log(value);
+  // }, [value, setValue]);
 
   // for location
   const [countryName, setCountryName] = useState("");
@@ -52,7 +55,7 @@ const News = () => {
       .get("https://ipapi.co/json/")
       .then((response) => {
         let data = response.data;
-        console.log(data);
+        // console.log(data);
         setCountryName(data.country_name);
         setCountryCode(data.country_code);
       })
@@ -76,6 +79,7 @@ const News = () => {
               variant="scrollable"
               scrollButtons="auto"
               centered
+              className={classes.tabs}
             >
               <Tab
                 icon={<ReactCountryFlag countryCode={countryCode} svg />}

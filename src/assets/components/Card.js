@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "10px",
         cursor: "pointer",
         minHeight: "200px",
-        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
         backdropFilter:
             "blur(10px) saturate(100%) contrast(45%) brightness(130%)",
     },
